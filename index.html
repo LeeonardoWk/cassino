@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casino Online</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>🎰 Mega Cassino Online 🎲</h1>
+    <nav>
+      <button onclick="resetGame()">🔄 Reiniciar</button>
+      <button onclick="showInstructions()">ℹ️ Instruções</button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="slot-container">
+      <div class="reel" id="reel1">
+        <div class="symbols"></div>
+      </div>
+      <div class="reel" id="reel2">
+        <div class="symbols"></div>
+      </div>
+      <div class="reel" id="reel3">
+        <div class="symbols"></div>
+      </div>
+    </div>
+
+    <input type="number" id="bet-input" placeholder="Digite sua aposta" />
+    <button onclick="startSpin()">Girar Agora</button>
+    <div id="balance">Créditos: R$ 1000</div>
+  </main>
+
+  <section id="instructions-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Como Jogar</h2>
+      <ul>
+        <li>🎰 Coloque um valor para apostar.</li>
+        <li>🎯 Pressione "Girar Agora".</li>
+        <li>💰 Combine 3 símbolos para ganhar o dobro da aposta.</li>
+        <li>💾 Seu saldo será salvo automaticamente.</li>
+      </ul>
+      <button onclick="closeInstructions()">Fechar</button>
+    </div>
+  </section>
+
+  <div id="win-screen" class="modal hidden">
+    <div class="modal-content">
+      <h2>🎉 Você Ganhou! 🎉</h2>
+      <p id="win-amount"></p>
+      <button onclick="closeWinScreen()">Fechar</button>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Mega Cassino Online. Todos os direitos reservados.
+  </footer>
+
+  <audio id="spin-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-slot-machine-win-1933.mp3"></audio>
+  <audio id="win-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-game-win-1992.mp3"></audio>
+  <audio id="lose-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-retro-arcade-lose-2027.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
